@@ -1,0 +1,12 @@
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    row-gap: 6vh;
+}
+
+.sendContact{
+    padding: 12px 32px;
+}

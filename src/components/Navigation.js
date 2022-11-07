@@ -15,7 +15,8 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
 const pages = ["Home", "Contact", "About"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Dashboard", "Logout"];
+const path = ["/profile", "/dashboard", "/logout"];
 
 function Navigation() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -177,11 +178,22 @@ function Navigation() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+                <Link to="/profile">
+                  <MenuItem key="profile" onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Profile</Typography>
+                  </MenuItem>
+                </Link>
+                <Link to="/dashboard">
+                  <MenuItem key="dashboard" onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Dashboard</Typography>
+                  </MenuItem>
+                </Link>
+                <Link to="/logout">
+                  <MenuItem key="logout" onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Logout</Typography>
+                  </MenuItem>
+                </Link>
+            
             </Menu>
           </Box>
         </Toolbar>

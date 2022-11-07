@@ -54,9 +54,9 @@ export default function Abou() {
           aria-label="basic tabs example"
           centered="true"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="New Coffee" {...a11yProps(0)} />
+          <Tab label="Artist" {...a11yProps(1)} />
+          <Tab label="Rooftop" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -68,13 +68,13 @@ export default function Abou() {
       <TabPanel value={value} index={1}>
         <img
           className="img_slide"
-          src="https://theexoticbean.com/wp-content/uploads/2016/02/rosette_pattern_coffee_art.png"
+          src="http://cdn.cnn.com/cnnnext/dam/assets/170825072924-latte-art-tease.jpg"
         />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <img
           className="img_slide"
-          src="https://theexoticbean.com/wp-content/uploads/2016/02/rosette_pattern_coffee_art.png"
+          src="https://1.bp.blogspot.com/-_MYNa-uF3Gg/YAZ-jFw7WDI/AAAAAAAADz4/aJTDSILJV1sI5YFlLhxs01axa1HDHPDtwCLcBGAsYHQ/s1440/%25C4%2591o%25CC%2582%25CC%2580i%2Brooftop.jpg"
         />
       </TabPanel>
     </Box>

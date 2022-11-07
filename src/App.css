@@ -1,4 +1,7 @@
 @import "./css/About.css";
+@import "./css/Contact.css";
+@import "./css/Home.css";
+
 .App {
   text-align: center;
 }
@@ -36,4 +39,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+a{
+  text-decoration: none;
 }
