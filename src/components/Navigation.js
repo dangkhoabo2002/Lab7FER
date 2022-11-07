@@ -178,22 +178,26 @@ function Navigation() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-                <Link to="/profile">
-                  <MenuItem key="profile" onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Profile</Typography>
-                  </MenuItem>
-                </Link>
-                <Link to="/dashboard">
-                  <MenuItem key="dashboard" onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Dashboard</Typography>
-                  </MenuItem>
-                </Link>
-                <Link to="/logout">
-                  <MenuItem key="logout" onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Logout</Typography>
-                  </MenuItem>
-                </Link>
-            
+              <Link to="/profile">
+                <MenuItem key="profile" onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Profile</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/dashboard">
+                <MenuItem key="dashboard" onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Dashboard</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/contactList">
+                <MenuItem key="contactList" onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Contact List</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/logout">
+                <MenuItem key="logout" onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">Logout</Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
         </Toolbar>

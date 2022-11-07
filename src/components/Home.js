@@ -7,12 +7,21 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Rating from "@mui/material/Rating";
 import { List } from "../data/ListOfFilm";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <div className="home">
       {List.map((film) => (
-        <Card sx={{ width: "500px", height: "500px", boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px", borderRadius:"16px"}}>
+        <Card
+          sx={{
+            width: "500px",
+            height: "500px",
+            boxShadow:
+              "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
+            borderRadius: "16px",
+          }}
+        >
           <CardMedia
             component="img"
             alt={film.title}
@@ -25,9 +34,11 @@ export default function Home() {
               {film.title}
             </Typography>
           </CardContent>
-          <CardActions sx={{display:"flex", justifyContent:"space-around"}}>
+          <CardActions sx={{ display: "flex", justifyContent: "space-around" }}>
             <Rating name="read-only" value={film.rate} readOnly />
-            <Button size="small">Learn More</Button>
+            <Link to={`/detail/${film.id}`}>
+              <Button size="small">Learn More</Button>
+            </Link>
           </CardActions>
         </Card>
       ))}
