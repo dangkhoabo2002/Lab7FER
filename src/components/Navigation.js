@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import { Link } from "react-router-dom";
 
 const pages = ["Home", "Contact", "About"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -114,36 +115,44 @@ function Navigation() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              sx={{
-                my: 2,
-                color: "white",
-                display: "block",
-                padding: "2vh 4vh",
-              }}
-            >
-              Home
-            </Button>
-            <Button
-              sx={{
-                my: 2,
-                color: "white",
-                display: "block",
-                padding: "2vh 4vh",
-              }}
-            >
-              Contact
-            </Button>
-            <Button
-              sx={{
-                my: 2,
-                color: "white",
-                display: "block",
-                padding: "2vh 4vh",
-              }}
-            >
-              About
-            </Button>
+            <Link to="/">
+              <Button
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  padding: "2vh 4vh",
+                }}
+              >
+                Home
+              </Button>
+            </Link>
+
+            <Link to="/contact">
+              <Button
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  padding: "2vh 4vh",
+                }}
+              >
+                Contact
+              </Button>
+            </Link>
+
+            <Link to="/about">
+              <Button
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  padding: "2vh 4vh",
+                }}
+              >
+                About
+              </Button>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

@@ -1,7 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Navigation from "./components/Navigation";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import Home from "./components/Home";
+import Detail from "./components/Detail";
 
 function App() {
   return (
