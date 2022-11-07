@@ -1,6 +1,7 @@
 @import "./css/About.css";
 @import "./css/Contact.css";
 @import "./css/Home.css";
+@import "./css/Detail.css";
 
 .App {
   text-align: center;

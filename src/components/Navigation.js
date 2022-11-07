@@ -53,11 +53,11 @@ function Navigation() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "Pink",
               textDecoration: "none",
             }}
           >
-            LOGO
+            KOW
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -155,6 +155,19 @@ function Navigation() {
               </Button>
             </Link>
           </Box>
+
+          <Link to="/login">
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                padding: "2vh 4vh",
+              }}
+            >
+              Login
+            </Button>
+          </Link>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

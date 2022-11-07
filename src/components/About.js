@@ -57,6 +57,7 @@ export default function Abou() {
           <Tab label="New Coffee" {...a11yProps(0)} />
           <Tab label="Artist" {...a11yProps(1)} />
           <Tab label="Rooftop" {...a11yProps(2)} />
+          <Tab label="Comming Soon" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -75,6 +76,12 @@ export default function Abou() {
         <img
           className="img_slide"
           src="https://1.bp.blogspot.com/-_MYNa-uF3Gg/YAZ-jFw7WDI/AAAAAAAADz4/aJTDSILJV1sI5YFlLhxs01axa1HDHPDtwCLcBGAsYHQ/s1440/%25C4%2591o%25CC%2582%25CC%2580i%2Brooftop.jpg"
+        />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <img
+          className="img_slide"
+          src="https://gamek.mediacdn.vn/133514250583805952/2021/4/5/ad2-1617611047953803571012.jpg"
         />
       </TabPanel>
     </Box>

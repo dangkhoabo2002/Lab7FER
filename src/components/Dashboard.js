@@ -63,13 +63,13 @@ export default function Dashboard() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {List.map((contact) => (
-              <StyledTableRow key={contact.name}>
+            {List.map((film) => (
+              <StyledTableRow key={film.title}>
                 <StyledTableCell component="th" scope="row">
                   <TextField
                     required
                     id="standard-required"
-                    defaultValue={contact.name}
+                    defaultValue={film.title}
                     variant="standard"
                     style={{ width: "150px" }}
 
@@ -80,7 +80,7 @@ export default function Dashboard() {
                   <TextField
                     required
                     id="standard-required"
-                    defaultValue={contact.email}
+                    defaultValue={film.img}
                     variant="standard"
                     style={{ width: "200px" }}
 
@@ -91,7 +91,7 @@ export default function Dashboard() {
                   <TextField
                     required
                     id="standard-required"
-                    defaultValue={contact.phone}
+                    defaultValue={film.rate}
                     variant="standard"
                     style={{ width: "auto" }}
 
@@ -102,7 +102,7 @@ export default function Dashboard() {
                   <TextField
                     required
                     id="standard-required"
-                    defaultValue={contact.program}
+                    defaultValue={film.cost}
                     style={{ width: "150px" }}
                     variant="standard"
                     //   onChange={(e) => setNewProgram(e.target.value)}
@@ -113,7 +113,7 @@ export default function Dashboard() {
                     style={{ width: "530px" }}
                     required
                     id="standard-required"
-                    defaultValue={contact.message}
+                    defaultValue={film.info}
                     variant="standard"
                     //   onChange={(e) => setNewMessage(e.target.value)}
                   />
@@ -124,7 +124,7 @@ export default function Dashboard() {
                     variant="outlined"
                     startIcon={<DeleteIcon />}
                     //   onClick={() => {
-                    //     dispatch(deleteContact({ id: contact.id }));
+                    //     dispatch(deleteContact({ id: film.id }));
                     //   }}
                   >
                     Delete
@@ -137,11 +137,11 @@ export default function Dashboard() {
                     //   onClick={() => {
                     //     dispatch(
                     //       updateContact({
-                    //         name: contact.newName,
-                    //         email: contact.newEmail,
-                    //         phone: contact.newPhone,
-                    //         program: contact.newProgram,
-                    //         message: contact.newMessage,
+                    //         name: film.newName,
+                    //         email: film.newEmail,
+                    //         phone: film.newPhone,
+                    //         program: film.newProgram,
+                    //         message: film.newMessage,
                     //       })
                     //     );
                     //   }}
