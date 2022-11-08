@@ -39,7 +39,7 @@ export default function UserMenu(props) {
         open={Boolean(anchorElUser)}
         onClose={handleCloseUserMenu}
       >
-        <Link to="/profile">
+        <Link to={{pathname:"/profile"}} state={{user:user}}>
           <MenuItem key="profile" onClick={handleCloseUserMenu}>
             <Typography textAlign="center">Profile</Typography>
           </MenuItem>
