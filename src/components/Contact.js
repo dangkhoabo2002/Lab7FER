@@ -2,17 +2,28 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import SendIcon from "@mui/icons-material/Send";
 import Button from "@mui/material/Button";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
 import { useState } from "react";
-import { addContact } from "../features/ContactsAction";
-import { useDispatch } from "react-redux";
 
 export default function Contact() {
-  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [gmail, setGmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+
+  const createContact = async () => {
+    const data = await (
+      await fetch("https://6358d002c27556d289443e6e.mockapi.io/contact", {
+        method: "POST",
+        body: JSON.stringify({
+          name,
+          email: gmail,
+          phone,
+          message,
+        }),
+      })
+    ).json();
+  };
+
   return (
     <div>
       <br></br>
@@ -60,15 +71,7 @@ export default function Contact() {
         />
         <Button
           onClick={() => {
-            dispatch(
-              addContact({
-                id: 0,
-                name: name,
-                gmail: gmail,
-                phone: phone,
-                message: message,
-              })
-            );
+            createContact();
           }}
           className="sendContact"
           variant="contained"

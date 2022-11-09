@@ -101,13 +101,9 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
-import Contact from "./Contact";
-import { deleteContact, updateContact } from "../features/ContactsAction";
 
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-
+// require('dotenv').config()
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
@@ -128,11 +124,33 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-
+const ENDPOINT = "https://6358d002c27556d289443e6e.mockapi.io/contact"
 export default function ContactList() {
-  const dispatch = useDispatch();
-  const contactList = useSelector((state) => state.contacts.value);
-  const [newUsername, setNewUsername] = useState("");
+  const [contactList, setContactList] = useState([]);
+
+  const getList = async() => {
+    const data = await (await fetch(ENDPOINT)).json()
+    
+    setContactList(data)
+  }
+
+  // const removeContact =(index)=>{
+  //   setContactList(pre=>{
+  //     pre.splice(index,1)
+  //     return [...pre];
+  //   })
+  // }
+  const removeContact =async(id)=>{
+    
+    await fetch(ENDPOINT+`/${id}`, {method: 'DELETE'}).then(result=>setContactList(contactList.filter(item=>item.id!=id)))
+  }
+  
+  React.useEffect(()=>{
+
+    getList()
+  },[])
+
+
   return (
     <div style={{ padding: "10vh" }}>
       <h1>Contact List</h1>
@@ -148,7 +166,7 @@ export default function ContactList() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {contactList.map((row) => (
+            {contactList.map((row,index) => (
               <StyledTableRow key={row.name}>
                 <StyledTableCell
                   component="th"
@@ -172,7 +190,7 @@ export default function ContactList() {
                 <StyledTableCell align="left" style={{ width: "auto" }}>
                   <Button
                     onClick={() => {
-                      dispatch(deleteContact({ id: row.id}));
+                      removeContact(row.id)
                     }}
                     variant="outlined"
                     startIcon={<DeleteIcon />}
